@@ -1,8 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace lab1_XOR
 {
@@ -26,18 +24,25 @@ namespace lab1_XOR
                  byte[] b2 = task2.FromHexString("400426564b385c193f13042d130c2e5d0e3f5a086b52072c5c192247032613433c5b02285b4b3c5c1920560f6b47032e13092e401f6b5f0a38474b32560a391a476b40022646072a470e2f130a255d0e2a5f0225544b24414b2c410a2f5a0e25474b2f56182856053f1d4b185619225c1e385f1267131c395a1f2e13023f13192254033f13052444476b4a043e131c225f076b5d0e2e574b22474b3f5c4b2f56082243032e414b3f5b0e6b5d0e33474b245d0e6b52186b440e275f456b710e2a414b225d4b265a052f1f4b3f5b0e395689cbaa186b5d046b401b2a500e381d", i);
                  Console.WriteLine($"\ndistance: {task1.HammingDistance(b1, b2)}, number b2: {b2.Length}     diff: {b2.Length - task1.HammingDistance(b1, b2)}");
              }*/
-
             byte[] b1 = task1.Devision(b, 0);
             byte[] b2 = task1.Devision(b, 1);
             byte[] b3 = task1.Devision(b, 2);
-           
-            byte[] b4 = task1.LetterFrequancy(b3).Keys.ToArray();
-            // task1.Decoder2(b4);
+
+
+
+            byte[] b4 = task1.LetterFrequancy(b1).Keys.ToArray();
+            byte[] b5 = task1.LetterFrequancy(b2).Keys.ToArray();
+            byte[] b6 = task1.LetterFrequancy(b3).Keys.ToArray();
+            Console.WriteLine($"\npart1:");
+            task1.Decoder2(b4);
+            Console.WriteLine($"\npart2:");
+            task1.Decoder2(b5);
+            Console.WriteLine($"\npart3:");
+            task1.Decoder2(b6);
             task1.Vigener(b, "K3k");
-            // Console.WriteLine($"b2:");
-            // task1.LetterFrequancy(b2);
-            // Console.WriteLine($"b3:");
-            // task1.LetterFrequancy(b3);
+            
+
+            Console.Read();
         }
 
 
